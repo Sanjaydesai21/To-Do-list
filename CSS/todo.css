@@ -1,0 +1,374 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Nav bar */
+
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  background: linear-gradient(135deg, #5c7cfa, #4ecdc4);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%;
+}
+
+/* Logo Styling */
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin-left: 18.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #f4d03f; /* Yellow */
+}
+
+/* Logout Button Styling */
+.logout-btn {
+  padding: 8px 15px;
+  margin-right: 2rem;
+  background-color: #e74c3c; /* Red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#log {
+  color: white;
+  text-decoration: none;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b; /* Darker Red */
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.toggle-menu {
+  display: none;
+}
+.username {
+  font-size: 1rem;
+  color: #fff;
+  /* background-color: #2980b9; */
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-left: 1rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.username:hover {
+  background-color: #1f6391;
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Hide nav links by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #3498db; /* Blue */
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show nav links when toggle-menu is checked */
+  .toggle-menu:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  /* Hamburger Menu */
+  .hamburger {
+    display: block;
+  }
+
+  .logout-btn {
+    order: 1; /* Move logout button below links */
+    margin-top: 10px;
+  }
+}
+
+/* Dark mode button */
+
+/* Todo start */
+
+.todo-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  padding: 20px 25px;
+  text-align: center;
+  margin: 1rem;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #444;
+  font-size: 1.8em;
+}
+
+/* Add Task Section */
+.add-task {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.add-task input:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.add-task button {
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  width: 7rem;
+}
+
+.add-task button:hover {
+  background-color: #218838;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.search-btn {
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  width: 7rem;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Task List */
+#task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  max-height: 45vh;
+}
+
+#task-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  position: relative;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#task-list li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f1f1f1;
+}
+
+.task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-text {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  word-break: break-word;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.task-row button {
+  padding: 6px 12px;
+  font-size: 0.9em;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-row button[name="delete"] {
+  background-color: #dc3545;
+}
+
+.task-row button[name="delete"]:hover {
+  background-color: #c82333;
+}
+
+.task-row button[name="edit"] {
+  background-color: #007bff;
+}
+
+.task-row button[name="edit"]:hover {
+  background-color: #0056b3;
+}
+
+.timestamp {
+  text-align: center;
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 10px;
+}
+
+.text-wrap {
+  word-break: break-word;
+  text-wrap: wrap;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .todo-container {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .add-task input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .add-task button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .search-bar input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .search-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  #task-list li {
+    padding: 10px;
+  }
+
+  .task-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-task {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .task-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .task-text {
+    font-size: 14px;
+  }
+}

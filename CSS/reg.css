@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #5c7cfa, #4ecdc4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: no-repeat;
+}
+
+/* Registration Container */
+.registration-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* Button Style */
+.btn {
+  background-color: #0056b3;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #003d7a;
+}
+
+/* Error and Success Messages */
+.registration-error,
+.registration-success {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.registration-error {
+  color: red;
+}
+
+.registration-success {
+  color: #4caf50;
+}
+
+.registration-success a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.registration-success a:hover {
+  text-decoration: underline;
+}
+
+/* Account Link */
+.account {
+  margin: 1rem 0;
+}
+
+.account a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.account a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
